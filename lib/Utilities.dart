@@ -35,6 +35,17 @@ class Utilities {
     }
   }
 
+  ///Launch any app url
+  static launchAPPWEB(String? nativeUrl,String? webUrl) async {
+    if (await canLaunchUrl(Uri.parse(nativeUrl!))) {
+      await launchUrl(Uri.parse(nativeUrl));
+    } else if (await canLaunchUrl(Uri.parse(webUrl!))) {
+      await launchUrl(Uri.parse(webUrl));
+    } else {
+      throw Exception('Could not launch');
+    }
+  }
+
   ///Launch Facebook
   static launchFacebook({
     required String androidURL,
