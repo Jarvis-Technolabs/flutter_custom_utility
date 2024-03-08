@@ -18,7 +18,13 @@ class Utilities {
   }
 
   ///To open default map app
-  static void launchMapURL(double latitude, double longitude,String? appleMapAppUrl,String? appleMapsUrl,String? launchMapUrl,String? appleMapApp) async {
+  static void launchMapURL(
+      double latitude,
+      double longitude,
+      String? appleMapAppUrl,
+      String? appleMapsUrl,
+      String? launchMapUrl,
+      String? appleMapApp) async {
     String appleApp = '$appleMapAppUrl${latitude},${longitude}';
     String appleMaps = '${appleMapsUrl}${latitude},${longitude}';
     String androidUrl = '$launchMapUrl${latitude},${longitude}';
@@ -36,13 +42,40 @@ class Utilities {
   }
 
   ///Launch any app url
-  static launchAPPWEB(String? nativeUrl,String? webUrl) async {
-    if (await canLaunchUrl(Uri.parse(nativeUrl!))) {
-      await launchUrl(Uri.parse(nativeUrl));
-    } else if (await canLaunchUrl(Uri.parse(webUrl!))) {
-      await launchUrl(Uri.parse(webUrl));
+  static launchAPPWEB(
+      {String? androidUrl,
+      String? iOSUrl,
+      String? androidWebUrl,
+      String? iOSWebUrl,
+      bool? useExternalApplication}) async {
+    if (Platform.isIOS) {
+      if (await launchUrl(Uri.parse(iOSUrl!))) {
+        await launchUrl(Uri.parse(iOSUrl),
+            mode: useExternalApplication != null
+                ? LaunchMode.externalApplication
+                : LaunchMode.platformDefault);
+      } else if (await launchUrl(Uri.parse(iOSWebUrl!))) {
+        await launchUrl(Uri.parse(iOSWebUrl),
+            mode: useExternalApplication != null
+                ? LaunchMode.externalApplication
+                : LaunchMode.platformDefault);
+      } else {
+        throw Exception('Could not launch iOS url');
+      }
     } else {
-      throw Exception('Could not launch');
+      if (await launchUrl(Uri.parse(androidUrl!))) {
+        await launchUrl(Uri.parse(androidUrl),
+            mode: useExternalApplication != null
+                ? LaunchMode.externalApplication
+                : LaunchMode.platformDefault);
+      } else if (await launchUrl(Uri.parse(androidWebUrl!))) {
+        await launchUrl(Uri.parse(androidWebUrl),
+            mode: useExternalApplication != null
+                ? LaunchMode.externalApplication
+                : LaunchMode.platformDefault);
+      } else {
+        throw Exception('Could not launch android url');
+      }
     }
   }
 
@@ -90,32 +123,6 @@ class Utilities {
     required Color color,
   }) =>
       color.value.toRadixString(16).substring(2, 8);
-
-  ///SuperTooltip
-  static SuperTooltip toolTip(
-      Color borderColors,
-      Color backgroundColors,
-      Color materialColors,
-      Widget child, {
-        TooltipDirection toolTipDirection = TooltipDirection.up,
-      }) =>
-      SuperTooltip(
-        borderRadius: 4,
-        arrowLength: 4,
-        arrowBaseWidth: 8,
-        borderColor: borderColors,
-        backgroundColor: backgroundColors,
-        popupDirection: toolTipDirection,
-        arrowTipDistance: 12.0,
-        hasShadow: false,
-        content: Material(
-          color: materialColors,
-          child: Padding(
-            padding: const EdgeInsets.all(0.0),
-            child: SingleChildScrollView(child: child),
-          ),
-        ),
-      );
 
   ///Get File Using URL
   static Future<File> getFileUsingURL(String url) async =>
