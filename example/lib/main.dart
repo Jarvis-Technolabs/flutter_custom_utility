@@ -1,5 +1,6 @@
 import 'package:example/src/Pages/CommonUtilityExamplePage.dart';
 import 'package:example/src/Pages/DateTimeUtilityExample.dart';
+import 'package:example/src/Pages/ValidationRegexExamplePage.dart';
 import 'package:flutter_custom_utility/DateUtil.dart';
 import 'package:example/src/Constants/DateTimeConstants.dart';
 import 'package:flutter/material.dart';
@@ -46,18 +47,30 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            exampleList("DateTime Utility Example",(){
+            exampleList("DateTime Utility Example", () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => DateTimeUtilityExamplePage(),),
+                  builder: (BuildContext context) =>
+                      DateTimeUtilityExamplePage(),
+                ),
               );
             }),
-            exampleList("Common Utility Example",(){
+            exampleList("Common Utility Example", () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => CommonUtilityExamplePage(),),
+                  builder: (BuildContext context) => CommonUtilityExamplePage(),
+                ),
+              );
+            }),
+            exampleList("Regex Validation Example", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      ValidationRegexExamplePage(),
+                ),
               );
             }),
           ],
@@ -66,11 +79,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget exampleList(String title,Function onTap) {
+  Widget exampleList(String title, Function onTap) {
     return Column(
       children: [
         GestureDetector(
-          onTap: (){
+          onTap: () {
             onTap();
           },
           child: Padding(
@@ -80,7 +93,8 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                    child: Text(title,
+                    child: Text(
+                  title,
                   style: const TextStyle(
                       color: Colors.black,
                       fontSize: 18,

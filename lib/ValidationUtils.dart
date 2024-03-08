@@ -2,13 +2,13 @@ import 'package:flutter_custom_utility/regex_validation_util.dart';
 
 class ValidationUtils {
   static String? validateName(
-      {required String text,
+      {required String name,
       required String emptyErrorMsg,
       required String textLengthErrorMsg,
       required int textLength}) {
-    if (text.isEmpty) {
+    if (name.isEmpty) {
       return emptyErrorMsg;
-    } else if (text.length < textLength) {
+    } else if (name.length < textLength) {
       return textLengthErrorMsg;
     } else {
       return null;
@@ -16,13 +16,13 @@ class ValidationUtils {
   }
 
   static String? validateEmail({
-    required String text,
+    required String email,
     required String emptyErrorMsg,
     required String validationErrorMsg,
   }) {
-    if (text.isEmpty) {
+    if (email.isEmpty) {
       return emptyErrorMsg;
-    } else if (!RegexValidationUtil().isEmail(text)) {
+    } else if (!RegexValidationUtil().isEmail(email)) {
       return validationErrorMsg;
     } else {
       return null;
@@ -30,13 +30,13 @@ class ValidationUtils {
   }
 
   static String? validatePassword({
-    required String text,
+    required String password,
     required String emptyErrorMsg,
     required String validationErrorMsg,
   }) {
-    if (text.isEmpty) {
+    if (password.isEmpty) {
       return emptyErrorMsg;
-    } else if (!RegexValidationUtil().isPasswordValid(text)) {
+    } else if (!RegexValidationUtil().isPasswordValid(password)) {
       return validationErrorMsg;
     } else {
       return null;
@@ -44,14 +44,14 @@ class ValidationUtils {
   }
 
   static String? validateConfirmPassword({
-    required String text,
+    required String confirmPassword,
     required String passwordText,
     required String emptyErrorMsg,
     required String validationErrorMsg,
   }) {
-    if (text.isEmpty) {
+    if (confirmPassword.isEmpty) {
       return emptyErrorMsg;
-    } else if (text != passwordText) {
+    } else if (confirmPassword != passwordText) {
       return validationErrorMsg;
     } else {
       return null;
@@ -59,10 +59,10 @@ class ValidationUtils {
   }
 
   static String? validateEmptyText({
-    String? text,
+    String? value,
     required String emptyErrorMsg,
   }) {
-    if (text == null || text.isEmpty) {
+    if (value == null || value.isEmpty) {
       return emptyErrorMsg;
     } else {
       return null;
