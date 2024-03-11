@@ -1,4 +1,4 @@
-import 'package:flutter_custom_utility/regex_validation_util.dart';
+import 'package:flutter_custom_utility/src/regex_validation_util.dart';
 
 class ValidationUtils {
   static String? validateName(
@@ -58,7 +58,7 @@ class ValidationUtils {
     }
   }
 
-  static String? validateEmptyText({
+  static String? requireFieldValidation({
     String? value,
     required String emptyErrorMsg,
   }) {

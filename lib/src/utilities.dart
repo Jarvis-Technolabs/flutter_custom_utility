@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutter_custom_utility/flutter_custom_utility.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:open_filex/open_filex.dart';
-import 'package:super_tooltip/super_tooltip.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Utilities {
@@ -42,7 +42,7 @@ class Utilities {
   }
 
   ///Launch any app url
-  static launchAPPWEB(
+  static launchAppOrWeb(
       {String? androidUrl,
       String? iOSUrl,
       String? androidWebUrl,
@@ -76,37 +76,6 @@ class Utilities {
       } else {
         throw Exception('Could not launch android url');
       }
-    }
-  }
-
-  ///Launch Facebook
-  static launchFacebook({
-    required String androidURL,
-    required String iosURL,
-    required String fallBackURL,
-  }) async {
-    String url;
-    if (Platform.isIOS) {
-      url = iosURL;
-    } else {
-      url = androidURL;
-    }
-
-    try {
-      bool launched = await launchUrl(
-        Uri.parse(url),
-        webViewConfiguration: WebViewConfiguration(),
-        mode: LaunchMode.externalApplication,
-      );
-
-      if (!launched) {
-        await launchUrl(
-          Uri.parse(fallBackURL),
-          mode: LaunchMode.externalApplication,
-        );
-      }
-    } catch (e) {
-      throw Exception(e);
     }
   }
 
@@ -147,5 +116,19 @@ class Utilities {
   /// open file method
   static Future<void> openFile({required String path}) async {
     await OpenFilex.open(path);
+  }
+
+  ///File size
+  static bool isFileSizeValid({
+    required File file,
+    double allowMb = ALLOW_IMAGE_FILE_SIZE_IN_MB,
+  }) {
+    int sizeInBytes = file.lengthSync();
+    double sizeInMb = sizeInBytes / (1024 * 1024);
+    if (sizeInMb <= allowMb) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

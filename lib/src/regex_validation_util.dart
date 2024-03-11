@@ -1,6 +1,4 @@
-import 'dart:io';
-
-import 'package:flutter_custom_utility/RegexConstant.dart';
+import 'package:flutter_custom_utility/src/Constant/regex_constant.dart';
 
 class RegexValidationUtil {
   ///CustomRegex
@@ -26,18 +24,4 @@ class RegexValidationUtil {
   ///Website
   bool isWebsiteValid(String website) =>
       RegExp(WEBSITE_VALID_FORMAT_REGEX).hasMatch(website);
-
-  ///File size
-  bool isFileSizeValid({
-    required File file,
-    double allowMb = ALLOW_IMAGE_FILE_SIZE_IN_MB,
-  }) {
-    int sizeInBytes = file.lengthSync();
-    double sizeInMb = sizeInBytes / (1024 * 1024);
-    if (sizeInMb <= allowMb) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 }

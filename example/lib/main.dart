@@ -1,8 +1,6 @@
-import 'package:example/src/Pages/CommonUtilityExamplePage.dart';
-import 'package:example/src/Pages/DateTimeUtilityExample.dart';
-import 'package:example/src/Pages/ValidationRegexExamplePage.dart';
-import 'package:flutter_custom_utility/DateUtil.dart';
-import 'package:example/src/Constants/DateTimeConstants.dart';
+import 'package:example/src/pages/common_utility_example_page.dart';
+import 'package:example/src/pages/date_time_utility_example.dart';
+import 'package:example/src/pages/validation_regex_example_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 

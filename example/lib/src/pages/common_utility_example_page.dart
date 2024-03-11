@@ -1,7 +1,5 @@
-import 'package:example/src/Constants/DateTimeConstants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_utility/DateUtil.dart';
-import 'package:flutter_custom_utility/Utilities.dart';
+import 'package:flutter_custom_utility/flutter_custom_utility.dart';
 
 class CommonUtilityExamplePage extends StatefulWidget {
   const CommonUtilityExamplePage({super.key});
@@ -66,7 +64,7 @@ class _CommonUtilityExamplePageState extends State<CommonUtilityExamplePage> {
                   const nativeUrl =
                       "instagram:instagram://user?username=severinas_app";
                   const webUrl = "https://www.instagram.com/car/";
-                  Utilities.launchAPPWEB(
+                  Utilities.launchAppOrWeb(
                       androidUrl: nativeUrl,
                       androidWebUrl: webUrl,
                       iOSUrl: nativeUrl,

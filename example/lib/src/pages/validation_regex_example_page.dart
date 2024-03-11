@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:example/src/widget/custom_textfield_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_utility/Utilities.dart';
-import 'package:flutter_custom_utility/ValidationUtils.dart';
+import 'package:flutter_custom_utility/flutter_custom_utility.dart';
 
 class ValidationRegexExamplePage extends StatefulWidget {
   const ValidationRegexExamplePage({super.key});

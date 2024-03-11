@@ -1,6 +1,6 @@
-import 'package:example/src/Constants/DateTimeConstants.dart';
+import 'package:example/src/constants/date_time_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_utility/DateUtil.dart';
+import 'package:flutter_custom_utility/flutter_custom_utility.dart';
 
 class DateTimeUtilityExamplePage extends StatefulWidget {
   const DateTimeUtilityExamplePage({super.key});
@@ -35,6 +35,24 @@ class _DateTimeUtilityExamplePageState
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      const Text(
+                        'Custom Format: ',
+                      ),
+                      Text(
+                        DateUtil.getCustomDateFormat(
+                            getCustomFormat: "dd MMM yyyy",
+                            apiDateFormat: API_DATE_FORMAT,
+                            localLang: FORMAT_LANGUAGE,
+                            parseDateFormat: "1974-02-12T00:00:00.00+4"),
+                        style: const TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -144,24 +162,6 @@ class _DateTimeUtilityExamplePageState
                       ),
                       Text(
                         DateUtil.getDDMMYYYYFromApiDateFormat(
-                            apiDateFormat: API_DATE_FORMAT,
-                            localLang: FORMAT_LANGUAGE,
-                            parseDateFormat: "1974-02-12T00:00:00.00+4"),
-                        style: const TextStyle(color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      const Text(
-                        'Custom Format: ',
-                      ),
-                      Text(
-                        DateUtil.getCustomDateFormat(
-                            getCustomFormat: "dd MMM yyyy",
                             apiDateFormat: API_DATE_FORMAT,
                             localLang: FORMAT_LANGUAGE,
                             parseDateFormat: "1974-02-12T00:00:00.00+4"),
