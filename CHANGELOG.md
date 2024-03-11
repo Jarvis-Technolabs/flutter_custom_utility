@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+Initial release. Flutter Version: 3.16.9
