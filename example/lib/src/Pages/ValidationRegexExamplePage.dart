@@ -38,6 +38,8 @@ class _ValidationRegexExamplePageState
   StreamController<bool> _signUpFormErrorStreamController =
       StreamController.broadcast();
 
+  var _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,112 +55,147 @@ class _ValidationRegexExamplePageState
                 child: StreamBuilder<bool>(
                     stream: _signUpFormErrorStreamController.stream,
                     builder: (context, snapshot) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          CustomTextFieldWidget(
-                            controller: _firstNameTextEditingController,
-                            labelText: "User Name",
-                            hintText: "User Name",
-                            errorText: firstNameError,
-                            onChanged: (value) {
-                              firstNameError = ValidationUtils.validateName(
-                                  name: value,
-                                  emptyErrorMsg: "User name is empty",
-                                  textLengthErrorMsg:
-                                      "User should be More than 3 word",
-                                  textLength: 3);
-                              _signUpFormErrorStreamController.add(true);
-                            },
-                            isMandatoryField: true,
-                            textInputAction: TextInputAction.next,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          CustomTextFieldWidget(
-                            controller: _emailTextEditingController,
-                            labelText: "Email Address",
-                            hintText: "Email Address",
-                            errorText: emailError,
-                            onChanged: (value) {
-                              emailError = ValidationUtils.validateEmail(
-                                  email: value,
-                                  emptyErrorMsg: "Email Address is empty",
-                                  validationErrorMsg: "Email is not valid");
-                              _signUpFormErrorStreamController.add(true);
-                            },
-                            isMandatoryField: true,
-                            textInputAction: TextInputAction.next,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          CustomTextFieldWidget(
-                            controller: _passwordTextEditingController,
-                            labelText: "Password",
-                            hintText: "Password",
-                            errorText: passwordError,
-                            onChanged: (value) {
-                              passwordError = ValidationUtils.validatePassword(
-                                  password: value,
-                                  emptyErrorMsg: "Password is empty",
-                                  validationErrorMsg: "Enter valid password");
-                              _signUpFormErrorStreamController.add(true);
-                            },
-                            isMandatoryField: true,
-                            textInputAction: TextInputAction.next,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          CustomTextFieldWidget(
-                            controller: _confirmPasswordTextEditingController,
-                            labelText: "Confirm Password",
-                            hintText: "Confirm Password",
-                            errorText: confirmPasswordError,
-                            onChanged: (value) {
-                              confirmPasswordError =
-                                  ValidationUtils.validateConfirmPassword(
-                                      confirmPassword: value,
-                                      passwordText:
-                                          _passwordTextEditingController.text,
-                                      emptyErrorMsg:
-                                          "Confirm Password is empty",
-                                      validationErrorMsg: "Password not match");
-                              _signUpFormErrorStreamController.add(true);
-                            },
-                            isMandatoryField: true,
-                            textInputAction: TextInputAction.next,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          StreamBuilder<bool>(
-                              stream: _signUpFormErrorStreamController.stream,
-                              initialData: false,
-                              builder: (context, snapshot) {
-                                bool isEnabled = isSignUpButtonEnabled();
-                                return ElevatedButton(
-                                  onPressed: isEnabled
-                                      ? () {
-                                          Utilities.showToast(
-                                              message: "Sign Up Done",
-                                              backgroundColors: Colors.black87,
-                                              textColors: Colors.white);
-                                        }
-                                      : null,
-                                  child: Text("Sign Up"),
-                                );
-                              }),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                        ],
+                      return Form(
+                        key: _formKey,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            CustomTextFieldWidget(
+                              controller: _firstNameTextEditingController,
+                              labelText: "User Name",
+                              hintText: "User Name",
+                              errorText: firstNameError,
+                              validator: (value) {
+                                return ValidationUtils.validateName(
+                                    name: value!,
+                                    emptyErrorMsg: "User name is empty",
+                                    textLengthErrorMsg:
+                                        "User should be More than 3 word",
+                                    textLength: 3);
+                              },
+                              onChanged: (value) {
+                                firstNameError = ValidationUtils.validateName(
+                                    name: value,
+                                    emptyErrorMsg: "User name is empty",
+                                    textLengthErrorMsg:
+                                        "User should be More than 3 word",
+                                    textLength: 3);
+                                _signUpFormErrorStreamController.add(true);
+                              },
+                              isMandatoryField: true,
+                              textInputAction: TextInputAction.next,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            CustomTextFieldWidget(
+                              controller: _emailTextEditingController,
+                              labelText: "Email Address",
+                              hintText: "Email Address",
+                              errorText: emailError,
+                              validator: (value) {
+                                return ValidationUtils.validateEmail(
+                                    email: value!,
+                                    emptyErrorMsg: "Email Address is empty",
+                                    validationErrorMsg: "Email is not valid");
+                              },
+                              onChanged: (value) {
+                                emailError = ValidationUtils.validateEmail(
+                                    email: value,
+                                    emptyErrorMsg: "Email Address is empty",
+                                    validationErrorMsg: "Email is not valid");
+                                _signUpFormErrorStreamController.add(true);
+                              },
+                              isMandatoryField: true,
+                              textInputAction: TextInputAction.next,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            CustomTextFieldWidget(
+                              controller: _passwordTextEditingController,
+                              labelText: "Password",
+                              hintText: "Password",
+                              errorText: passwordError,
+                              validator: (value) {
+                                return ValidationUtils.validatePassword(
+                                    password: value!,
+                                    emptyErrorMsg: "Password is empty",
+                                    validationErrorMsg: "Enter valid password");
+                              },
+                              onChanged: (value) {
+                                passwordError =
+                                    ValidationUtils.validatePassword(
+                                        password: value,
+                                        emptyErrorMsg: "Password is empty",
+                                        validationErrorMsg:
+                                            "Enter valid password");
+                                _signUpFormErrorStreamController.add(true);
+                              },
+                              isMandatoryField: true,
+                              textInputAction: TextInputAction.next,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            CustomTextFieldWidget(
+                              controller: _confirmPasswordTextEditingController,
+                              labelText: "Confirm Password",
+                              hintText: "Confirm Password",
+                              errorText: confirmPasswordError,
+                              validator: (value) {
+                                return ValidationUtils.validateConfirmPassword(
+                                    confirmPassword: value!,
+                                    passwordText:
+                                        _passwordTextEditingController.text,
+                                    emptyErrorMsg: "Confirm Password is empty",
+                                    validationErrorMsg: "Password not match");
+                              },
+                              onChanged: (value) {
+                                confirmPasswordError =
+                                    ValidationUtils.validateConfirmPassword(
+                                        confirmPassword: value,
+                                        passwordText:
+                                            _passwordTextEditingController.text,
+                                        emptyErrorMsg:
+                                            "Confirm Password is empty",
+                                        validationErrorMsg:
+                                            "Password not match");
+                                _signUpFormErrorStreamController.add(true);
+                              },
+                              isMandatoryField: true,
+                              textInputAction: TextInputAction.next,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            StreamBuilder<bool>(
+                                stream: _signUpFormErrorStreamController.stream,
+                                initialData: false,
+                                builder: (context, snapshot) {
+                                  return ElevatedButton(
+                                    onPressed: () {
+                                      final isValid =
+                                          _formKey.currentState!.validate();
+                                      if (isValid) {
+                                        Utilities.showToast(
+                                            message: "Sign Up Done",
+                                            backgroundColors: Colors.black87,
+                                            textColors: Colors.white);
+                                      }
+                                    },
+                                    child: Text("Sign Up"),
+                                  );
+                                }),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                          ],
+                        ),
                       );
                     }),
               ))),
