@@ -12,9 +12,12 @@ A versatile Flutter package offering essential utility functions for common task
 - Date and Time Util: Easily handle date and time operations for a seamless user experience.
 
 ## ScreenShot
-![screenshot-1710246676868.png](..%2F..%2F..%2F..%2F..%2FUsers%2Fios03%2FDownloads%2Fscreenshot-1710246676868.png)
-![screenshot-1710246841179.png](..%2F..%2F..%2F..%2F..%2FUsers%2Fios03%2FDownloads%2Fscreenshot-1710246841179.png)
-![screenshot-1710246706947.png](..%2F..%2F..%2F..%2F..%2FUsers%2Fios03%2FDownloads%2Fscreenshot-1710246706947.png)
+
+<img src="https://dev.azure.com/jarvistechnolabs/JT%20Flutter/_git/flutter_custom_utility?path=/example/assets/images/screenshot-1710246676868.png" width="300"/> 
+<img src="https://dev.azure.com/jarvistechnolabs/JT%20Flutter/_git/flutter_custom_utility?path=/example/assets/images/screenshot-1710246706947.png" width="300"/>
+<img src="https://dev.azure.com/jarvistechnolabs/JT%20Flutter/_git/flutter_custom_utility?path=/example/assets/images/screenshot-1710246841179.png" width="300"/>
+
+
 
 ## Example
 Date and time util
