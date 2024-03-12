@@ -176,22 +176,24 @@ class _ValidationRegexExamplePageState
                                 stream: _signUpFormErrorStreamController.stream,
                                 initialData: false,
                                 builder: (context, snapshot) {
-                                  return ElevatedButton(
-                                    onPressed: () {
-                                      final isValid =
-                                          _formKey.currentState!.validate();
-                                      if (isValid) {
-                                        Utilities.showToast(
-                                            message: "Sign Up Done",
-                                            backgroundColors: Colors.black87,
-                                            textColors: Colors.white);
-                                      }
-                                    },
-                                    child: Text("Sign Up"),
+                                  return Center(
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        final isValid =
+                                            _formKey.currentState!.validate();
+                                        if (isValid) {
+                                          Utilities.showToast(
+                                              message: "Sign Up Done",
+                                              backgroundColors: Colors.black87,
+                                              textColors: Colors.white);
+                                        }
+                                      },
+                                      child: Text("Sign Up"),
+                                    ),
                                   );
                                 }),
                             const SizedBox(
-                              height: 30,
+                              height: 10,
                             ),
                           ],
                         ),

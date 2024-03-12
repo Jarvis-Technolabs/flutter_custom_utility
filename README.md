@@ -1,20 +1,76 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Flutter Custom Utility
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+This package includes Common Utility functions (such as launching URLs, app URL launches, hex-to-color conversion, 
+downloading files with caching functionality, displaying toasts, and opening files), along with modules for Validation, Regex, and Date and Time utilities
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Features
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+A versatile Flutter package offering essential utility functions for common tasks. Simplify your development process with features including:
+- Common Utility: Streamline your code with a set of general-purpose utility functions.
+- Validation: Validate user inputs effortlessly with pre-built validation methods.
+- Regex: Harness the power of regular expressions for pattern matching and data extraction.
+- Date and Time Util: Easily handle date and time operations for a seamless user experience.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## ScreenShot
+![screenshot-1710246676868.png](..%2F..%2F..%2F..%2F..%2FUsers%2Fios03%2FDownloads%2Fscreenshot-1710246676868.png)
+![screenshot-1710246841179.png](..%2F..%2F..%2F..%2F..%2FUsers%2Fios03%2FDownloads%2Fscreenshot-1710246841179.png)
+![screenshot-1710246706947.png](..%2F..%2F..%2F..%2F..%2FUsers%2Fios03%2FDownloads%2Fscreenshot-1710246706947.png)
+
+## Example
+Date and time util
+```
+     DateUtil.getCustomDateFormat(
+        getCustomFormat: "dd MMM yyyy",
+        apiDateFormat: "yyyy-MM-dd'T'hh:mm:ssZ",
+        localLang: "en",
+        parseDateFormat: "1974-02-12T00:00:00.00+4"
+     )
+```
+Validation
+```
+     ValidationUtils.validateName(
+        name: value!,
+        emptyErrorMsg: "User name is empty",
+        textLengthErrorMsg:
+            "User should be More than 3 word",
+        textLength: 3
+     )
+```
+
+Regex
+```
+      bool isCustomRegexFormat(String value, String regexString) =>
+         RegExp(regexString).hasMatch(value);
+```
+
+Common Utility
+```
+      const nativeUrl =
+                   "instagram:instagram://user?username=severinas_app";
+      const webUrl = "https://www.instagram.com/car/";
+      Utilities.launchAppOrWeb(
+          androidUrl: nativeUrl,
+          androidWebUrl: webUrl,
+          iOSUrl: nativeUrl,
+          iOSWebUrl: webUrl,
+          useExternalApplication: true
+      );
+```
+
+
+## Installation
+
+To use this flutter_custom_utility component in your project, follow these steps:
+
+1. This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
+
+    ```
+   dependencies:
+    flutter_custom_utility: ^0.0.2
+    ```
+
+2. Import it:
+
+    ```
+    import 'package:flutter_custom_utility/flutter_custom_utility.dart';
+    ```

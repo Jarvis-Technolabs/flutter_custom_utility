@@ -1,7 +1,7 @@
 name: flutter_custom_utility
 description: Flutter custom utility Package
 version: 0.0.1
-homepage:
+homepage: https://jarvistechnolabs.com/
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: 0.18.1
+  intl: ^0.19.0
   open_filex: ^4.4.0
   fluttertoast: ^8.2.4
   url_launcher: ^6.2.5
