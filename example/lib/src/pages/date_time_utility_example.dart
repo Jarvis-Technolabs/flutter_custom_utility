@@ -21,6 +21,7 @@ class _DateTimeUtilityExamplePageState
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
               padding: EdgeInsets.all(8.0),

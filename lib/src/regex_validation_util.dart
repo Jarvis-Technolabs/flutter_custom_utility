@@ -1,4 +1,4 @@
-import 'package:flutter_custom_utility/src/Constant/regex_constant.dart';
+import 'package:flutter_custom_utility/src/constant/regex_constant.dart';
 
 class RegexValidationUtil {
   ///CustomRegex
