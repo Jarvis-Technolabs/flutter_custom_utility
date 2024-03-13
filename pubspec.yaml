@@ -1,6 +1,6 @@
 name: flutter_custom_utility
 description: This package includes Common Utility function, Validation, Regex, and Date and Time utilities.
-version: 0.0.3
+version: 0.0.4
 homepage: https://jarvistechnolabs.com/
 
 environment:
@@ -10,11 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.19.0
-  open_filex: ^4.4.0
   fluttertoast: ^8.2.4
-  url_launcher: ^6.2.5
   flutter_cache_manager: ^3.3.1
+  intl: ^0.18.1
+  open_filex: ^4.4.0
+  url_launcher: ^6.2.5
+
 
 dev_dependencies:
   flutter_test:
