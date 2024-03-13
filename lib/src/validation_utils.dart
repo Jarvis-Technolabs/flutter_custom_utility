@@ -1,7 +1,7 @@
 import 'package:flutter_custom_utility/src/regex_validation_util.dart';
 
 class ValidationUtils {
-  static String? validateName(
+  String? validateName(
       {required String name,
       required String emptyErrorMsg,
       required String textLengthErrorMsg,
@@ -15,7 +15,7 @@ class ValidationUtils {
     }
   }
 
-  static String? validateEmail({
+  String? validateEmail({
     required String email,
     required String emptyErrorMsg,
     required String validationErrorMsg,
@@ -29,7 +29,7 @@ class ValidationUtils {
     }
   }
 
-  static String? validatePassword({
+  String? validatePassword({
     required String password,
     required String emptyErrorMsg,
     required String validationErrorMsg,
@@ -43,7 +43,7 @@ class ValidationUtils {
     }
   }
 
-  static String? validateConfirmPassword({
+  String? validateConfirmPassword({
     required String confirmPassword,
     required String passwordText,
     required String emptyErrorMsg,
