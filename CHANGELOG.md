@@ -1,3 +1,4 @@
-## 0.0.1
+## 0.0.2
 
-Initial release. Flutter Version: 3.16.9
+- Update Readme.
+- Flutter Version: 3.16.9
