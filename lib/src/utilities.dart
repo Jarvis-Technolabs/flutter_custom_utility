@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Utilities {
   ///To open default app system
-  static void launchURL(String url) async {
+  void launchURL(String url) async {
     if (await canLaunchUrl(Uri.parse(url))) {
       await launchUrl(Uri.parse(url));
     } else {
@@ -18,13 +18,8 @@ class Utilities {
   }
 
   ///To open default map app
-  static void launchMapURL(
-      double latitude,
-      double longitude,
-      String? appleMapAppUrl,
-      String? appleMapsUrl,
-      String? launchMapUrl,
-      String? appleMapApp) async {
+  void launchMapURL(double latitude, double longitude, String? appleMapAppUrl,
+      String? appleMapsUrl, String? launchMapUrl, String? appleMapApp) async {
     String appleApp = '$appleMapAppUrl${latitude},${longitude}';
     String appleMaps = '${appleMapsUrl}${latitude},${longitude}';
     String androidUrl = '$launchMapUrl${latitude},${longitude}';
@@ -42,7 +37,7 @@ class Utilities {
   }
 
   ///Launch any app url
-  static launchAppOrWeb(
+  launchAppOrWeb(
       {String? androidUrl,
       String? iOSUrl,
       String? androidWebUrl,
@@ -80,7 +75,7 @@ class Utilities {
   }
 
   ///Convert Hax Color Code To Color Object
-  static Color convertHaxColorCodeToColorObject({
+  Color convertHaxColorCodeToColorObject({
     required String colorCode,
   }) =>
       Color(
@@ -88,17 +83,17 @@ class Utilities {
       );
 
   ///Convert Hax Color Code To String
-  static String convertHaxColorCodeToString({
+  String convertHaxColorCodeToString({
     required Color color,
   }) =>
       color.value.toRadixString(16).substring(2, 8);
 
   ///Get File Using URL
-  static Future<File> getFileUsingURL(String url) async =>
+  Future<File> getFileUsingURL(String url) async =>
       await DefaultCacheManager().getSingleFile(url);
 
   ///Show Toast
-  static void showToast({
+  void showToast({
     required String message,
     required Color backgroundColors,
     required Color textColors,
@@ -114,12 +109,12 @@ class Utilities {
   }
 
   /// open file method
-  static Future<void> openFile({required String path}) async {
+  Future<void> openFile({required String path}) async {
     await OpenFilex.open(path);
   }
 
   ///File size
-  static bool isFileSizeValid({
+  bool isFileSizeValid({
     required File file,
     double allowMb = ALLOW_IMAGE_FILE_SIZE_IN_MB,
   }) {

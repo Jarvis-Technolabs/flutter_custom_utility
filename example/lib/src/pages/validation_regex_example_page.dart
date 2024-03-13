@@ -31,6 +31,8 @@ class _ValidationRegexExamplePageState
   bool? isRememberMe;
 
   bool isTermsAndConditionAccepted = false;
+  ValidationUtils validationUtils = ValidationUtils();
+  Utilities utilities = Utilities();
 
   /// Declare error test string variables
   String? firstNameError, emailError, passwordError, confirmPasswordError;
@@ -69,7 +71,7 @@ class _ValidationRegexExamplePageState
                               hintText: "User Name",
                               errorText: firstNameError,
                               validator: (value) {
-                                return ValidationUtils.validateName(
+                                return validationUtils.validateName(
                                     name: value!,
                                     emptyErrorMsg: "User name is empty",
                                     textLengthErrorMsg:
@@ -77,7 +79,7 @@ class _ValidationRegexExamplePageState
                                     textLength: 3);
                               },
                               onChanged: (value) {
-                                firstNameError = ValidationUtils.validateName(
+                                firstNameError = validationUtils.validateName(
                                     name: value,
                                     emptyErrorMsg: "User name is empty",
                                     textLengthErrorMsg:
@@ -97,13 +99,13 @@ class _ValidationRegexExamplePageState
                               hintText: "Email Address",
                               errorText: emailError,
                               validator: (value) {
-                                return ValidationUtils.validateEmail(
+                                return validationUtils.validateEmail(
                                     email: value!,
                                     emptyErrorMsg: "Email Address is empty",
                                     validationErrorMsg: "Email is not valid");
                               },
                               onChanged: (value) {
-                                emailError = ValidationUtils.validateEmail(
+                                emailError = validationUtils.validateEmail(
                                     email: value,
                                     emptyErrorMsg: "Email Address is empty",
                                     validationErrorMsg: "Email is not valid");
@@ -121,14 +123,14 @@ class _ValidationRegexExamplePageState
                               hintText: "Password",
                               errorText: passwordError,
                               validator: (value) {
-                                return ValidationUtils.validatePassword(
+                                return validationUtils.validatePassword(
                                     password: value!,
                                     emptyErrorMsg: "Password is empty",
                                     validationErrorMsg: "Enter valid password");
                               },
                               onChanged: (value) {
                                 passwordError =
-                                    ValidationUtils.validatePassword(
+                                    validationUtils.validatePassword(
                                         password: value,
                                         emptyErrorMsg: "Password is empty",
                                         validationErrorMsg:
@@ -147,7 +149,7 @@ class _ValidationRegexExamplePageState
                               hintText: "Confirm Password",
                               errorText: confirmPasswordError,
                               validator: (value) {
-                                return ValidationUtils.validateConfirmPassword(
+                                return validationUtils.validateConfirmPassword(
                                     confirmPassword: value!,
                                     passwordText:
                                         _passwordTextEditingController.text,
@@ -156,7 +158,7 @@ class _ValidationRegexExamplePageState
                               },
                               onChanged: (value) {
                                 confirmPasswordError =
-                                    ValidationUtils.validateConfirmPassword(
+                                    validationUtils.validateConfirmPassword(
                                         confirmPassword: value,
                                         passwordText:
                                             _passwordTextEditingController.text,
@@ -182,7 +184,7 @@ class _ValidationRegexExamplePageState
                                         final isValid =
                                             _formKey.currentState!.validate();
                                         if (isValid) {
-                                          Utilities.showToast(
+                                          utilities.showToast(
                                               message: "Sign Up Done",
                                               backgroundColors: Colors.black87,
                                               textColors: Colors.white);

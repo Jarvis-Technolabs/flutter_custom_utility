@@ -10,6 +10,7 @@ class CommonUtilityExamplePage extends StatefulWidget {
 }
 
 class _CommonUtilityExamplePageState extends State<CommonUtilityExamplePage> {
+  Utilities utilities = Utilities();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,7 @@ class _CommonUtilityExamplePageState extends State<CommonUtilityExamplePage> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Utilities.showToast(
+                  utilities.showToast(
                       message: "Show toast",
                       backgroundColors: Colors.black87,
                       textColors: Colors.white);
@@ -41,7 +42,7 @@ class _CommonUtilityExamplePageState extends State<CommonUtilityExamplePage> {
               margin: EdgeInsets.all(16),
               height: 50,
               width: double.infinity,
-              color: Utilities.convertHaxColorCodeToColorObject(
+              color: utilities.convertHaxColorCodeToColorObject(
                   colorCode: "B39DDB"),
               child: Center(child: Text("Convert Hax Code To Color Object")),
             ),
@@ -49,11 +50,11 @@ class _CommonUtilityExamplePageState extends State<CommonUtilityExamplePage> {
               margin: EdgeInsets.all(16),
               height: 50,
               width: double.infinity,
-              color: Utilities.convertHaxColorCodeToColorObject(
+              color: utilities.convertHaxColorCodeToColorObject(
                   colorCode: "B39DDB"),
               child: Center(
                   child: Text(
-                      "Hax Color Code: ${Utilities.convertHaxColorCodeToString(color: Color(0xFFB39DDB))}")),
+                      "Hax Color Code: ${utilities.convertHaxColorCodeToString(color: Color(0xFFB39DDB))}")),
             ),
             SizedBox(
               height: 16,
@@ -64,7 +65,7 @@ class _CommonUtilityExamplePageState extends State<CommonUtilityExamplePage> {
                   const nativeUrl =
                       "instagram:instagram://user?username=severinas_app";
                   const webUrl = "https://www.instagram.com/car/";
-                  Utilities.launchAppOrWeb(
+                  utilities.launchAppOrWeb(
                       androidUrl: nativeUrl,
                       androidWebUrl: webUrl,
                       iOSUrl: nativeUrl,

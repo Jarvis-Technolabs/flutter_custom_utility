@@ -12,6 +12,8 @@ class DateTimeUtilityExamplePage extends StatefulWidget {
 
 class _DateTimeUtilityExamplePageState
     extends State<DateTimeUtilityExamplePage> {
+  DateUtil dateUtil = DateUtil();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +46,7 @@ class _DateTimeUtilityExamplePageState
                         'Custom Format: ',
                       ),
                       Text(
-                        DateUtil.getCustomDateFormat(
+                        dateUtil.getCustomDateFormat(
                             getCustomFormat: "dd MMM yyyy",
                             apiDateFormat: API_DATE_FORMAT,
                             localLang: FORMAT_LANGUAGE,
@@ -62,7 +64,7 @@ class _DateTimeUtilityExamplePageState
                         'dd, EEEE: ',
                       ),
                       Text(
-                        DateUtil.getDateWithDay(
+                        dateUtil.getDateWithDay(
                             getAPIDateFormat: API_DATE_FORMAT,
                             localLang: FORMAT_LANGUAGE,
                             parseDateFormat: "1974-02-12T00:00:00.00+4"),
@@ -79,7 +81,7 @@ class _DateTimeUtilityExamplePageState
                         'MMM yyyy: ',
                       ),
                       Text(
-                        DateUtil.getMonthWithYear(
+                        dateUtil.getMonthWithYear(
                             getAPIDateFormat: API_DATE_FORMAT,
                             localLang: FORMAT_LANGUAGE,
                             parseDateFormat: "1974-02-12T00:00:00.00+4"),
@@ -96,7 +98,7 @@ class _DateTimeUtilityExamplePageState
                         'MMMM yyyy: ',
                       ),
                       Text(
-                        DateUtil.getFullMonthNameWithYear(
+                        dateUtil.getFullMonthNameWithYear(
                             getAPIDateFormat: API_DATE_FORMAT,
                             localLang: FORMAT_LANGUAGE,
                             parseDateFormat: "1974-02-12T00:00:00.00+4"),
@@ -113,7 +115,7 @@ class _DateTimeUtilityExamplePageState
                         'MMMM: ',
                       ),
                       Text(
-                        DateUtil.getFullMonthName(
+                        dateUtil.getFullMonthName(
                             getAPIDateFormat: API_DATE_FORMAT,
                             localLang: FORMAT_LANGUAGE,
                             parseDateFormat: "1974-02-12T00:00:00.00+4"),
@@ -130,7 +132,7 @@ class _DateTimeUtilityExamplePageState
                         'HH:mm: ',
                       ),
                       Text(
-                        DateUtil.get24ClockTimeFromApiDateString(
+                        dateUtil.get24ClockTimeFromApiDateString(
                             apiDateFormat: API_DATE_FORMAT,
                             parseDateFormat: "1974-02-12T13:10:30.00+4"),
                         style: const TextStyle(color: Colors.black),
@@ -146,7 +148,7 @@ class _DateTimeUtilityExamplePageState
                         'hh:mm aa: ',
                       ),
                       Text(
-                        DateUtil.get12ClockTimeFromApiDateString(
+                        dateUtil.get12ClockTimeFromApiDateString(
                             apiDateFormat: API_DATE_FORMAT,
                             parseDateFormat: "1974-02-12T00:00:00.00+4"),
                         style: const TextStyle(color: Colors.black),
@@ -162,7 +164,7 @@ class _DateTimeUtilityExamplePageState
                         'dd/MM/yyyy: ',
                       ),
                       Text(
-                        DateUtil.getDDMMYYYYFromApiDateFormat(
+                        dateUtil.getDDMMYYYYFromApiDateFormat(
                             apiDateFormat: API_DATE_FORMAT,
                             localLang: FORMAT_LANGUAGE,
                             parseDateFormat: "1974-02-12T00:00:00.00+4"),

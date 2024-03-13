@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 class DateUtil {
   ///Custom Date Format
-  static String getCustomDateFormat(
+  String getCustomDateFormat(
           {String? apiDateFormat,
           String? parseDateFormat,
           String? localLang,
@@ -15,7 +15,7 @@ class DateUtil {
           : "";
 
   ///get24ClockTimeFromDateTime
-  static String get24ClockTimeFromDateTime({
+  String get24ClockTimeFromDateTime({
     DateTime? dateTime,
     String? localLang,
   }) =>
@@ -24,7 +24,7 @@ class DateUtil {
           : "";
 
   ///get12ClockTimeFromDateTime
-  static String get12ClockTimeFromDateTime({
+  String get12ClockTimeFromDateTime({
     DateTime? dateTime,
     String? localLang,
   }) =>
@@ -33,7 +33,7 @@ class DateUtil {
           : "";
 
   ///get24ClockTimeFromApiDateString
-  static String get24ClockTimeFromApiDateString(
+  String get24ClockTimeFromApiDateString(
           {String? apiDateFormat,
           String? localLang,
           String? parseDateFormat}) =>
@@ -44,7 +44,7 @@ class DateUtil {
           : "";
 
   ///get12ClockTimeFromApiDateString
-  static String get12ClockTimeFromApiDateString(
+  String get12ClockTimeFromApiDateString(
           {String? apiDateFormat,
           String? localLang,
           String? parseDateFormat}) =>
@@ -55,7 +55,7 @@ class DateUtil {
           : "";
 
   ///getDDMMYYYYFromApiDateFormat
-  static String getDDMMYYYYFromApiDateFormat(
+  String getDDMMYYYYFromApiDateFormat(
           {String? apiDateFormat,
           String? parseDateFormat,
           String? localLang}) =>
@@ -66,7 +66,7 @@ class DateUtil {
           : "";
 
   ///Example: API Date Format "yyyy-MM-dd'T'hh:mm:ssZ"
-  static String changeApiDateFormat(
+  String changeApiDateFormat(
           {String? apiDateFormat,
           String? parseDateFormat,
           String? getDateFormat,
@@ -78,7 +78,7 @@ class DateUtil {
           : "";
 
   ///getSendAPIDateFormat
-  static String getSendAPIDateFormat(
+  String getSendAPIDateFormat(
           {DateTime? apiDateFormat,
           String? getDateFormat,
           String? localLang}) =>
@@ -87,7 +87,7 @@ class DateUtil {
           : "";
 
   ///MMMM (Example: JUNE)
-  static String getFullMonthName(
+  String getFullMonthName(
           {String? parseDateFormat,
           String? getAPIDateFormat,
           String? localLang}) =>
@@ -96,7 +96,7 @@ class DateUtil {
               .parse(parseDateFormat!));
 
   ///MMMM yyyy(Example: JUNE 2024)
-  static String getFullMonthNameWithYear(
+  String getFullMonthNameWithYear(
           {String? parseDateFormat,
           String? getAPIDateFormat,
           String? localLang}) =>
@@ -105,7 +105,7 @@ class DateUtil {
               .parse(parseDateFormat!));
 
   ///MMM yyyy(Example: jun 2024)
-  static String getMonthWithYear(
+  String getMonthWithYear(
           {String? parseDateFormat,
           String? getAPIDateFormat,
           String? localLang}) =>
@@ -114,7 +114,7 @@ class DateUtil {
               .parse(parseDateFormat!));
 
   ///dd EEEE(Example: 05, Monday)
-  static String getDateWithDay(
+  String getDateWithDay(
           {String? parseDateFormat,
           String? getAPIDateFormat,
           String? localLang}) =>

@@ -70,7 +70,7 @@ To use this flutter_custom_utility component in your project, follow these steps
 
     ```
    dependencies:
-    flutter_custom_utility: ^0.0.4
+    flutter_custom_utility: ^0.0.5
     ```
 
 2. Import it:
