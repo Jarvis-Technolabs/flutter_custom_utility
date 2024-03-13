@@ -20,9 +20,9 @@ class Utilities {
   ///To open default map app
   void launchMapURL(double latitude, double longitude, String? appleMapAppUrl,
       String? appleMapsUrl, String? launchMapUrl, String? appleMapApp) async {
-    String appleApp = '$appleMapAppUrl${latitude},${longitude}';
-    String appleMaps = '${appleMapsUrl}${latitude},${longitude}';
-    String androidUrl = '$launchMapUrl${latitude},${longitude}';
+    String appleApp = '$appleMapAppUrl$latitude,$longitude';
+    String appleMaps = '$appleMapsUrl$latitude,$longitude';
+    String androidUrl = '$launchMapUrl$latitude,$longitude';
     if (Platform.isAndroid) {
       if (await canLaunchUrl(Uri.parse(androidUrl))) {
         await launchUrl(Uri.parse(androidUrl));
