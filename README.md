@@ -15,14 +15,13 @@ A versatile Flutter package offering essential utility functions for common task
 
 | **Package version** | **Flutter version** |
 |:-------------------:|:-------------------:|
-|        0.0.6        |   3.16.0 - 3.19.3   |
+|        0.0.7        |   3.16.0 - 3.19.3   |
 
 ## ScreenShot
 
-<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png" style="width: 310px"/>
-<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png" style="width: 310px"/>
-<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png" style="width: 310px"/>
-
+<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png" alt=" ScreenShot 1" height="310"/>
+<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png" alt=" ScreenShot 2" height="310"/>
+<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png" alt=" ScreenShot 3" height="310"/>
 
 ## Example
 Date and time util
@@ -74,7 +73,7 @@ To use this flutter_custom_utility component in your project, follow these steps
 
     ```
    dependencies:
-    flutter_custom_utility: ^0.0.6
+    flutter_custom_utility: ^0.0.7
     ```
 
 2. Import it:
