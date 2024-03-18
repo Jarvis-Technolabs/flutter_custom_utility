@@ -11,6 +11,12 @@ A versatile Flutter package offering essential utility functions for common task
 - Regex: Harness the power of regular expressions for pattern matching and data extraction.
 - Date and Time Util: Easily handle date and time operations for a seamless user experience.
 
+## Flutter Compatibility 
+
+| **Package version** | **Flutter version** |
+|:-------------------:|:-------------------:|
+|        0.0.6        |   3.16.0 - 3.19.3   |
+
 ## ScreenShot
 
 <a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png" style="width: 310px"/>
