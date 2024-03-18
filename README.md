@@ -13,9 +13,9 @@ A versatile Flutter package offering essential utility functions for common task
 
 ## ScreenShot
 
-<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png" style="width: 350px"/>
-<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png" style="width: 350px"/>
-<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png" style="width: 350px"/>
+<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/1.png" style="width: 310px"/>
+<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/2.png" style="width: 310px"/>
+<a href="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png"><img src="https://raw.githubusercontent.com/Jarvis-Technolabs/flutter_custom_utility/assets/3.png" style="width: 310px"/>
 
 
 ## Example
