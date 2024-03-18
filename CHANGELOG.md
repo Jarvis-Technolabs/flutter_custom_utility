@@ -1,3 +1,6 @@
+## 0.0.6
+- README.md file update
+
 ## 0.0.5
 
 - Remove static from classes.
