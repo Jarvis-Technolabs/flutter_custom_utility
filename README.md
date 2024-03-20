@@ -15,7 +15,7 @@ A versatile Flutter package offering essential utility functions for common task
 
 | **Package version** | **Flutter version** |
 |:-------------------:|:-------------------:|
-|        0.0.7        |   3.16.0 - 3.19.3   |
+|        0.0.8        |   3.16.0 - 3.19.3   |
 
 ## ScreenShot
 
@@ -73,7 +73,7 @@ To use this flutter_custom_utility component in your project, follow these steps
 
     ```
    dependencies:
-    flutter_custom_utility: ^0.0.7
+    flutter_custom_utility: ^0.0.8
     ```
 
 2. Import it:
