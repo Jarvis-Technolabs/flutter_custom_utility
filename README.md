@@ -25,7 +25,7 @@ A versatile Flutter package offering essential utility functions for common task
 
 ## Example
 Date and time util
-```
+``` dart
      DateUtil.getCustomDateFormat(
         getCustomFormat: "dd MMM yyyy",
         apiDateFormat: "yyyy-MM-dd'T'hh:mm:ssZ",
@@ -34,7 +34,7 @@ Date and time util
      )
 ```
 Validation
-```
+``` dart
      ValidationUtils.validateName(
         name: value!,
         emptyErrorMsg: "User name is empty",
@@ -45,13 +45,13 @@ Validation
 ```
 
 Regex
-```
+``` dart
       bool isCustomRegexFormat(String value, String regexString) =>
          RegExp(regexString).hasMatch(value);
 ```
 
 Common Utility
-```
+``` dart
       const nativeUrl =
                    "instagram:instagram://user?username=severinas_app";
       const webUrl = "https://www.instagram.com/car/";
@@ -71,13 +71,13 @@ To use this flutter_custom_utility component in your project, follow these steps
 
 1. This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
 
-    ```
+    ``` dart
    dependencies:
-    flutter_custom_utility: ^0.0.8
+      flutter_custom_utility: ^0.0.8
     ```
 
 2. Import it:
 
-    ```
+    ``` dart
     import 'package:flutter_custom_utility/flutter_custom_utility.dart';
     ```
