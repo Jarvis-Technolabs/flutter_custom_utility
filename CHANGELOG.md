@@ -1,3 +1,6 @@
+## 0.0.9
+- README.md file update
+
 ## 0.0.8
 - Added package repository
 
