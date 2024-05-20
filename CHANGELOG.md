@@ -1,3 +1,8 @@
+## 0.0.10
+- Added return type to launchURL, launchMapURL and launchAppOrWeb function for future handling
+- Breaking change: launchURL and launchMapURL now accepts naming parameter
+- Updated the code formatting/refactoring for Example app 
+
 ## 0.0.9
 - README.md file update
 

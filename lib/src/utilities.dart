@@ -9,69 +9,76 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Utilities {
   ///To open default app system
-  void launchURL(String url) async {
+  Future<bool> launchURL({
+    required String url,
+  }) async {
     if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(Uri.parse(url));
+      return await launchUrl(Uri.parse(url));
     } else {
-      throw Exception('Could not launch $url');
+      return false;
     }
   }
 
   ///To open default map app
-  void launchMapURL(double latitude, double longitude, String? appleMapAppUrl,
-      String? appleMapsUrl, String? launchMapUrl, String? appleMapApp) async {
+  Future<bool> launchMapURL({
+    required double latitude,
+    required double longitude,
+    String? appleMapAppUrl,
+    String? appleMapsUrl,
+    String? launchMapUrl,
+    String? appleMapApp,
+  }) async {
     String appleApp = '$appleMapAppUrl$latitude,$longitude';
     String appleMaps = '$appleMapsUrl$latitude,$longitude';
     String androidUrl = '$launchMapUrl$latitude,$longitude';
     if (Platform.isAndroid) {
       if (await canLaunchUrl(Uri.parse(androidUrl))) {
-        await launchUrl(Uri.parse(androidUrl));
+        return await launchUrl(Uri.parse(androidUrl));
       }
     } else if (Platform.isIOS) {
       if (await canLaunchUrl(Uri.parse(appleMaps))) {
-        await launchUrl(Uri.parse(Uri.encodeFull(appleMaps)));
+        return await launchUrl(Uri.parse(Uri.encodeFull(appleMaps)));
       } else if (await canLaunchUrl(Uri.parse(appleMapApp!))) {
-        await launchUrl(Uri.parse(Uri.encodeFull(appleApp)));
+        return await launchUrl(Uri.parse(Uri.encodeFull(appleApp)));
       }
     }
+    return false;
   }
 
   ///Launch any app url
-  launchAppOrWeb(
-      {String? androidUrl,
-      String? iOSUrl,
-      String? androidWebUrl,
-      String? iOSWebUrl,
-      bool? useExternalApplication}) async {
+  Future<bool> launchAppOrWeb({
+    String? androidUrl,
+    String? iOSUrl,
+    String? androidWebUrl,
+    String? iOSWebUrl,
+    bool? useExternalApplication,
+  }) async {
     if (Platform.isIOS) {
       if (await launchUrl(Uri.parse(iOSUrl!))) {
-        await launchUrl(Uri.parse(iOSUrl),
+        return await launchUrl(Uri.parse(iOSUrl),
             mode: useExternalApplication != null
                 ? LaunchMode.externalApplication
                 : LaunchMode.platformDefault);
       } else if (await launchUrl(Uri.parse(iOSWebUrl!))) {
-        await launchUrl(Uri.parse(iOSWebUrl),
+        return await launchUrl(Uri.parse(iOSWebUrl),
             mode: useExternalApplication != null
                 ? LaunchMode.externalApplication
                 : LaunchMode.platformDefault);
-      } else {
-        throw Exception('Could not launch iOS url');
       }
     } else {
       if (await launchUrl(Uri.parse(androidUrl!))) {
-        await launchUrl(Uri.parse(androidUrl),
+        return await launchUrl(Uri.parse(androidUrl),
             mode: useExternalApplication != null
                 ? LaunchMode.externalApplication
                 : LaunchMode.platformDefault);
       } else if (await launchUrl(Uri.parse(androidWebUrl!))) {
-        await launchUrl(Uri.parse(androidWebUrl),
+        return await launchUrl(Uri.parse(androidWebUrl),
             mode: useExternalApplication != null
                 ? LaunchMode.externalApplication
                 : LaunchMode.platformDefault);
-      } else {
-        throw Exception('Could not launch android url');
       }
     }
+    return false;
   }
 
   ///Convert Hax Color Code To Color Object

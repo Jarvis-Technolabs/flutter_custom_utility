@@ -15,7 +15,7 @@ A versatile Flutter package offering essential utility functions for common task
 
 | **Package version** | **Flutter version** |
 |:-------------------:|:-------------------:|
-|        0.0.9        |   3.16.0 - 3.19.3   |
+|   0.0.1 - 0.0.10    |   3.16.0 - 3.19.3   |
 
 ## ScreenShot
 
@@ -55,7 +55,7 @@ Common Utility
       const nativeUrl =
                    "instagram:instagram://user?username=severinas_app";
       const webUrl = "https://www.instagram.com/car/";
-      Utilities.launchAppOrWeb(
+      await Utilities.launchAppOrWeb(
           androidUrl: nativeUrl,
           androidWebUrl: webUrl,
           iOSUrl: nativeUrl,
@@ -73,7 +73,7 @@ To use this flutter_custom_utility component in your project, follow these steps
 
     ``` dart
    dependencies:
-      flutter_custom_utility: ^0.0.9
+      flutter_custom_utility: ^0.0.10
     ```
 
 2. Import it:
