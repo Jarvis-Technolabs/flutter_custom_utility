@@ -1,3 +1,6 @@
+## 0.0.11
+- Added toastLength, gravity, timeInSecForIosWeb parameters in showToast method
+
 ## 0.0.10
 - Added return type to launchURL, launchMapURL and launchAppOrWeb function for future handling
 - Breaking change: launchURL and launchMapURL now accepts naming parameter

@@ -104,14 +104,17 @@ class Utilities {
     required String message,
     required Color backgroundColors,
     required Color textColors,
+    Toast? toastLength = Toast.LENGTH_SHORT,
+    ToastGravity? gravity = ToastGravity.BOTTOM,
+    int timeInSecForIosWeb = 5,
   }) {
     Fluttertoast.showToast(
       msg: message,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
+      toastLength: toastLength,
+      gravity: gravity,
       backgroundColor: backgroundColors,
       textColor: textColors,
-      timeInSecForIosWeb: 5,
+      timeInSecForIosWeb: timeInSecForIosWeb,
     );
   }
 
