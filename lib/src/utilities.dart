@@ -28,17 +28,23 @@ class Utilities {
     String? launchMapUrl,
     String? appleMapApp,
   }) async {
-    String appleApp = '$appleMapAppUrl$latitude,$longitude';
-    String appleMaps = '$appleMapsUrl$latitude,$longitude';
-    String androidUrl = '$launchMapUrl$latitude,$longitude';
     if (Platform.isAndroid) {
-      if (await canLaunchUrl(Uri.parse(androidUrl))) {
-        return await launchUrl(Uri.parse(androidUrl));
+      if (launchMapUrl != null) {
+        String androidUrl = '$launchMapUrl$latitude,$longitude';
+        if (await canLaunchUrl(Uri.parse(androidUrl))) {
+          return await launchUrl(Uri.parse(androidUrl));
+        }
       }
     } else if (Platform.isIOS) {
-      if (await canLaunchUrl(Uri.parse(appleMaps))) {
-        return await launchUrl(Uri.parse(Uri.encodeFull(appleMaps)));
-      } else if (await canLaunchUrl(Uri.parse(appleMapApp!))) {
+      if (appleMapsUrl != null) {
+        String appleMaps = '$appleMapsUrl$latitude,$longitude';
+        if (await canLaunchUrl(Uri.parse(appleMaps))) {
+          return await launchUrl(Uri.parse(Uri.encodeFull(appleMaps)));
+        }
+      } else if (appleMapApp != null &&
+          appleMapAppUrl != null &&
+          await canLaunchUrl(Uri.parse(appleMapApp))) {
+        String appleApp = '$appleMapAppUrl$latitude,$longitude';
         return await launchUrl(Uri.parse(Uri.encodeFull(appleApp)));
       }
     }

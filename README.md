@@ -15,7 +15,7 @@ A versatile Flutter package offering essential utility functions for common task
 
 | **Package version** | **Flutter version** |
 |:-------------------:|:-------------------:|
-|   0.0.1 - 0.0.11    |   3.16.0 - 3.19.3   |
+|    0.0.1 - 1.0.1    |   3.16.0 - 3.22.3   |
 
 ## ScreenShot
 

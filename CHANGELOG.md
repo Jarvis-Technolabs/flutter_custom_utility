@@ -1,5 +1,10 @@
-## 0.0.11
+## 1.0.1
 - Added toastLength, gravity, timeInSecForIosWeb parameters in showToast method
+
+## 1.0.0
+- Flutter Version: 3.22.3
+- Added null check for methods
+- Added return type for methods
 
 ## 0.0.10
 - Added return type to launchURL, launchMapURL and launchAppOrWeb function for future handling
