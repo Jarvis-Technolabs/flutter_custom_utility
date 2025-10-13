@@ -1,3 +1,6 @@
+## 1.1.0
+- Flutter version upgrade to 3.32.8
+
 ## 1.0.1
 - Added toastLength, gravity, timeInSecForIosWeb parameters in showToast method
 
